@@ -1,0 +1,47 @@
+version: '3.8'
+
+services:
+  frontend:
+    build: ./Frontend/frontend_app
+    container_name: react_app
+    ports:
+      - "1000:80"
+    networks:
+      - my_custom_network
+    depends_on:
+      - backend
+
+  backend:
+    build: ./Backend
+    container_name: express_app
+    ports:
+      - "2000:3000"
+    environment:
+      DB_PORT: 5432
+      DB_NAME: my_db
+      DB_USER: my_user
+      DB_PASSWORD: my_pass
+    networks:
+      - my_custom_network
+    depends_on:
+      - database
+
+  database:
+    image: postgres:17
+    restart: always
+    container_name: postgres_container
+    environment:
+      POSTGRES_DB: my_db
+      POSTGRES_USER: my_user
+      POSTGRES_PASSWORD: my_pass
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    networks:
+      - my_custom_network
+
+networks:
+  my_custom_network:
+    driver: bridge
+
+volumes:
+  postgres_data:
