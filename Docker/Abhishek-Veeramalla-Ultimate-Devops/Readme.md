@@ -4,3 +4,6 @@ https://github.com/iam-veeramalla/three-tier-architecture-demo/blob/master/docke
 
 2. Opentelemetry application:
 https://github.com/open-telemetry/opentelemetry-demo/blob/main/docker-compose.yml
+
+3. Docker compose example files:
+https://github.com/docker/awesome-compose
