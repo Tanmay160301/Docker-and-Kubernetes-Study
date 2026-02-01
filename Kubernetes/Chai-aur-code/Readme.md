@@ -1,9 +1,10 @@
 Creating cluster in kubernetes
+'''
 kind create cluster --name <cluster-name>
 kind get clusters
 kind delete cluster --name <cluster-name>
 kind create cluster --name <multi-node-cluster-name> --config <config-file-path>
-
+'''
 
 Getting cluster information
 kubectl cluster-info --context kind-my-first-cluster
