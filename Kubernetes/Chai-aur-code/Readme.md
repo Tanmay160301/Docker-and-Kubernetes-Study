@@ -83,10 +83,10 @@ kubectl exec -it my-pod -- /bin/bash # get inside a running pod
 kubectl exec -it my-pod -- sh # for alpine images
 ```
 
-Theoretical notes  
-Kubernetes Architecture:  
+## Theoretical notes  
+### Kubernetes Architecture:  
 <p align="center">
   <img src="Images/K8-Architecture.jpg" width="600"/>
 </p>
 
-Replicasets and Deployments:
+### Replicasets and Deployments:
