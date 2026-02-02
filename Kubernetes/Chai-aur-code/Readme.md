@@ -44,6 +44,7 @@ kubectl get namespaces
 
 Deployments
 ```
+kubectl create deployment my-dep --image=nginx --replicas=3
 kubectl get deployments
 ```
 
@@ -90,3 +91,26 @@ kubectl exec -it my-pod -- sh # for alpine images
 </p>
 
 ### Replicasets and Deployments:
+A deployment is something which will create a replicaset and which inturn manages replicas of the pods  
+Even if we delete any pod, deployment controller will make sure that it will have desired number of pods
+
+```
+kubectl create deployment my-dep --image=nginx --replicas=3
+kubectl get deployments
+kubectl describe deployment my-dep 
+kubectl edit deployment my-dep
+kubectl scale deployments my-dep --replicas=7 # To scale the deployments
+```
+
+Deployment.yaml can also be created and 
+```
+kubectl apply -f deployment.yaml
+```
+
+Rollout a deployment
+```
+kubectl rollout restart deployment/my-app # Restart the pods
+kubectl rollout history deployments # to check revision
+kubectl rollout undo deployment/my-app # Rollout to previous versions
+kubectl rollout -h # for checking how to use this commands
+```

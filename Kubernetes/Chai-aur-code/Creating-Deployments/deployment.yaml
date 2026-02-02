@@ -1,0 +1,25 @@
+apiVersion: apps/v1 # Deployment uses apps/v1 API version
+kind: Deployment # Kind is Deployment
+metadata: # labels and metadata for the Deployment
+  name: nginx-deployment
+  labels:
+    app: nginx
+spec: # Specification of the Deployment
+  replicas: 2 # Number of desired Pod replicas
+  selector: # Selector to identify Pods managed by this Deployment
+    matchLabels:
+      app: nginx
+  template: # Template for the Pods created by this Deployment
+    metadata:
+      labels:
+        app: nginx
+    spec:
+      containers:
+      - name: nginx-container
+        image: nginx:latest
+        ports:
+        - containerPort: 80
+        resources:
+          limits:
+            memory: "256Mi"
+            cpu: "500m"
