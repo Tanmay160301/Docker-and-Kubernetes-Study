@@ -85,5 +85,6 @@ kubectl exec -it my-pod -- sh # for alpine images
 
 Theoretical notes  
 Kubernetes Architecture:
+![Kubernetes Architecture](Kubernetes\Chai-aur-code\Images\K8-Architecture.jpg)
 
 Replicasets and Deployments:
