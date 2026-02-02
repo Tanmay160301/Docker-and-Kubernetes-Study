@@ -82,3 +82,8 @@ kubectl logs my-pod -c my-container #If a pod contains multiple container
 kubectl exec -it my-pod -- /bin/bash # get inside a running pod
 kubectl exec -it my-pod -- sh # for alpine images
 ```
+
+Theoretical notes
+Kubernetes Architecture:
+
+Replicasets and Deployments:
