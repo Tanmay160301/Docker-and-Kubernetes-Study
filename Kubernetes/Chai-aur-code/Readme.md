@@ -90,7 +90,7 @@ Kubernetes Architecture:
 <img src="Kubernetes/Chai-aur-code/Images/K8-Architecture.jpg" width="600" height="350" alt="K8 Architecture Diagram"/>
 
 <p align="center">
-  <img src="Kubernetes/Chai-aur-code/Images/K8-Architecture.jpg" width="600"/>
+  <img src="Images/K8-Architecture.jpg" width="600"/>
 </p>
 
 Replicasets and Deployments:
