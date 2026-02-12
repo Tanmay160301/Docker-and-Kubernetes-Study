@@ -18,6 +18,8 @@ kubectl config get-contexts
 kubectl config current-context
 ```
 
+Kubernetes objects can be created using imperative way(via commands) or declarative way(yaml files)
+
 
 Getting nodes of cluster
 ```
@@ -28,8 +30,9 @@ kubectl get nodes
 pods commands
 ```
 kubectl get pods
+kubectl get pods --watch # for real time instead of entering this command multiple times 
 kubectl get pods -A        # all namespaces
-kubectl get pods -o wide   # more details
+kubectl get pods -o wide   # more details (IP addresses vagere distat)
 kubectl get pods nginx-pod -o yaml
 kubectl get pods -n <specific-namespaces>
 kubectl get pods --show-labels
@@ -56,7 +59,8 @@ kubectl get rs
 
 Services
 ```
-kubectl get svc
+kubectl get svc/kubectl get service
+
 ```
 
 Creating a deployment.yaml file and deploy the pods
@@ -114,3 +118,36 @@ kubectl rollout history deployments # to check revision
 kubectl rollout undo deployment/my-app # Rollout to previous versions
 kubectl rollout -h # for checking how to use this commands
 ```
+
+## Services 
+A service has its own IP and port(port) and it points to targetports of the pods
+
+3 Types
+a. Nodeport service: 
+b. ClusterIP service: 
+c. Loadbalancer service:
+
+
+### ClusterIP service:
+service is also created by its deployment name
+```
+kubectl expose deployment <deployment-name> --port=80
+kubectl get service
+kubectl describe service <deployment-name>
+```
+
+ClusterIP service are meant to be accessible from only inside your cluster, like backends of application or databases
+```
+kubectl port-forward svc/dep 8080:80 # In case if you wanna access
+```
+You can even create a yaml file and apply that to create service declaratively
+
+## The Key Difference between Service Port and Node Port  
+Service Port (port): The "Internal" door. It is the port used inside the cluster. Other Pods in the same cluster talk to your service using this port.  
+NodePort (nodePort): The "External" door. It is a specific port (range 30000–32767) opened on every Node's IP address. It allows users outside the cluster to reach the service.   
+
+How Traffic Flows  
+When a request comes from the outside world, it moves through these ports in order:  
+NodePort: External traffic hits Node_IP:NodePort (e.g., 172.18.0.2:30007).
+Service Port: The NodePort forwards that traffic to the internal Service Port (e.g., 80).  
+TargetPort: The Service then sends the traffic to the targetPort (e.g., 80) on the actual Pod where your app is running.   
