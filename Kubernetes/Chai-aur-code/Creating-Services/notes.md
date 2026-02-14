@@ -7,5 +7,5 @@
 ---
 
 <p align="center">
-  <img src="Creating-Services/Services-Image-Notes/Service Setup.jpeg" width="600"/>
+  <img src="Services-Image-Notes/Service Setup.jpeg" width="600"/>
 </p>
