@@ -49,6 +49,7 @@ Replication Controller
 Deployment Controller  
 Endpoint Controller  
 Job Controller  
+
 Controllers constantly:  
 Compare desired state vs actual state  
 Take action to match them  
