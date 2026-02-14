@@ -1,7 +1,7 @@
 ## Service Notes
 
 <p align="center">
-  <img src="Creating-Services/Services-Image-Notes/pods-getting-ip-assigned.jpeg" width="600"/>
+  <img src="Services-Image-Notes/pods-getting-ip-assigned.jpeg" width="600"/>
 </p>
 
 ---
