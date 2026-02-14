@@ -94,13 +94,6 @@ kubectl exec -it my-pod -- sh # for alpine images
   <img src="Images/K8-Architecture.jpg" width="600"/>
 </p>
 
-<p align="center">
-  <img src="Creating-Services/Services-Image-Notes/ingress-setup.jpg" width="600"/>
-</p>
-
-<p align="center">
-  <img src="Creating-Services/Services-Image-Notes/pods-getting-ip-assigned.jpeg" width="600"/>
-</p>
 
 ### Replicasets and Deployments:
 A deployment is something which will create a replicaset and which inturn manages replicas of the pods  
