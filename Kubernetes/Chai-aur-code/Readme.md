@@ -94,6 +94,14 @@ kubectl exec -it my-pod -- sh # for alpine images
   <img src="Images/K8-Architecture.jpg" width="600"/>
 </p>
 
+<p align="center">
+  <img src="Creating-Services/Services-Image-Notes/ingress-setup.jpg" width="600"/>
+</p>
+
+<p align="center">
+  <img src="Creating-Services/Services-Image-Notes/pods-getting-ip-assigned.jpeg" width="600"/>
+</p>
+
 ### Replicasets and Deployments:
 A deployment is something which will create a replicaset and which inturn manages replicas of the pods  
 Even if we delete any pod, deployment controller will make sure that it will have desired number of pods
@@ -120,6 +128,7 @@ kubectl rollout -h # for checking how to use this commands
 ```
 
 ## Services 
+Pods are ephemeral in nature. They get destroyed frequently (new IP address everytime)
 A service has its own IP and port(port) and it points to targetports of the pods
 
 3 Types
