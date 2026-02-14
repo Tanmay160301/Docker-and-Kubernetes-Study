@@ -153,3 +153,8 @@ When a request comes from the outside world, it moves through these ports in ord
 NodePort: External traffic hits Node_IP:NodePort (e.g., 172.18.0.2:30007).
 Service Port: The NodePort forwards that traffic to the internal Service Port (e.g., 80).  
 TargetPort: The Service then sends the traffic to the targetPort (e.g., 80) on the actual Pod where your app is running.   
+
+
+Observation:  
+1. whenever we do kubectl get service we get kubernetes service as well which is a default service  
+The kubernetes service is a default ClusterIP service automatically created by Kubernetes. It provides a stable internal endpoint for pods and system components to communicate with the API server.  

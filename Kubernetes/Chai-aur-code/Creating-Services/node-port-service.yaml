@@ -4,7 +4,7 @@ metadata:
   name: my-nodeport-service
 spec:
   selector:
-    app: nginx
+    app: dep
   ports:
     - protocol: TCP
       port: 80 # Service Port

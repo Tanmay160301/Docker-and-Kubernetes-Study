@@ -1,0 +1,1 @@
+kind load docker-image my-app:1.0
