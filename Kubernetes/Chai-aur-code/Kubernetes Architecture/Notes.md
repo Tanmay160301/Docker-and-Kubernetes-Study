@@ -2,11 +2,11 @@
 
 A Kubernetes cluster has two main parts:
 
-Kubernetes Cluster
-│
-├── Control Plane (Master)
-│
-└── Worker Nodes (Minions)
+Kubernetes Cluster  
+│  
+├── Control Plane (Master)  
+│  
+└── Worker Nodes (Minions)  
 
 
 - **Control Plane** → Manages the cluster  
@@ -85,11 +85,11 @@ Each worker node runs:
 
 
 
-Worker Node
-│
-├── kubelet
-├── kube-proxy
-└── Container Runtime
+Worker Node  
+│  
+├── kubelet  
+├── kube-proxy  
+└── Container Runtime  
 
 
 ### 👷 1. kubelet
