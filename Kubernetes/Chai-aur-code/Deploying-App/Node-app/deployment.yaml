@@ -1,24 +1,24 @@
 apiVersion: apps/v1 # Deployment uses apps/v1 API version
 kind: Deployment # Kind is Deployment
 metadata: # labels and metadata for the Deployment
-  name: nginx-deployment
+  name: express-dep
   labels:
-    app: nginx
+    app: express
 spec: # Specification of the Deployment
   replicas: 2 # Number of desired Pod replicas
   selector: # Selector to identify Pods managed by this Deployment
     matchLabels:
-      app: nginx
+      app: express
   template: # Template for the Pods created by this Deployment
     metadata:
       labels:
-        app: nginx
+        app: express
     spec:
       containers:
-      - name: nginx-container
-        image: nginx:latest
+      - name: express-app
+        image: express-app:v1.0.0
         ports:
-        - containerPort: 3000
+        - containerPort: 80
         resources:
           limits:
             memory: "256Mi"

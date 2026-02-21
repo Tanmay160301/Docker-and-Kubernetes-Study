@@ -1,0 +1,17 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: my-node-app-ingress
+spec:
+  ingressClassName: nginx
+  rules:
+  - host: my-express-app.com      # or your desired host
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: express-svc
+            port:
+              number: 3000
