@@ -6,6 +6,22 @@ kind delete cluster --name <cluster-name>
 kind create cluster --name <multi-node-cluster-name> --config <config-file-path>
 ```
 
+## `kind-config.yaml`
+
+```yaml
+kind: Cluster
+apiVersion: kind.x-k8s.io/v1alpha4
+nodes:
+- role: control-plane
+  extraPortMappings:
+  - containerPort: 80
+    hostPort: 80
+    protocol: TCP
+  - containerPort: 443
+    hostPort: 443
+    protocol: TCP
+```
+
 Getting cluster information
 ```
 kubectl cluster-info --context kind-my-first-cluster

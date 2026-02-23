@@ -1,0 +1,49 @@
+apiVersion: apps/v1 # Deployment uses apps/v1 API version
+kind: Deployment # Kind is Deployment
+metadata: # labels and metadata for the Deployment
+  name: express-dep
+  labels:
+    app: express
+spec: # Specification of the Deployment
+  replicas: 2 # Number of desired Pod replicas
+  selector: # Selector to identify Pods managed by this Deployment
+    matchLabels:
+      app: express
+  template: # Template for the Pods created by this Deployment
+    metadata:
+      labels:
+        app: express
+    spec:
+      containers:
+      - name: express-app
+        image: tanmaybhurke01/express-app:v3.0.0
+        env:
+          - name: app_name
+            value: "kubernetes env variable,config map and secret demo"
+          - name: next_var
+            value: "NEXT_VAR_VALUE"
+          - name: MY_NAME          # name of the env var inside container
+            valueFrom:
+              configMapKeyRef:
+                name: app-config   # name of the ConfigMap
+                key: my_name        # key in the ConfigMap
+          - name: MY_AGE
+            valueFrom:
+              configMapKeyRef:
+                name: app-config
+                key: my_age
+        envFrom: # 2. All key-value pairs from another ConfigMap
+        - configMapRef:
+            name: another-app-config   # all keys become env vars
+        - secretRef: # 3. All key-value pairs from a Secret
+            name: bro-secret          # all keys become env vars
+        - secretRef: # 3. All key-value pairs from a Secret
+            name: my-secret          # all keys become env vars
+        ports:
+        - containerPort: 80
+        resources:
+          limits:
+            memory: "256Mi"
+            cpu: "500m"
+      imagePullSecrets: # Image pull secrets for private registry access
+      - name: regcred
