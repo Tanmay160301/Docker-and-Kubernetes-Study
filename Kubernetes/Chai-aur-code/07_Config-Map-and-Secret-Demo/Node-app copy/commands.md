@@ -29,7 +29,7 @@ kubectl create secret generic bro-secret --from-env-file=secret.env
 regcred  
 kubectl create secret docker-registry regcred \
   --docker-username=tanmaybhurke01 \
-  --docker-password=Hanuman@160301 \
+  --docker-password=Password@123 \
   --docker-email=tanmaybhurke01@gmail.com
 
 ```
