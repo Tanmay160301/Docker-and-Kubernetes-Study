@@ -1,19 +1,14 @@
 # Metrics Server and Autoscaling in Kubernetes
 
 ## Table of Contents
-- [Overview](#overview)
+
 - [Requests and Limits](#requests-and-limits)
 - [Metrics Server](#metrics-server)
 - [Autoscaling](#autoscaling)
 
----
-## Overview
-
 
 ---
 # Requests and Limits
-Here are clean, copy-paste friendly **Markdown notes** on **Requests and Limits in Kubernetes** 👇
-
 
 In **Kubernetes**, resource management is controlled using:
 
@@ -192,7 +187,7 @@ If only limits are set:
 
 ### 🚨 What Happens If You Set Nothing?
 
-* Pod becomes **BestEffort**
+* Pod becomes **BestEffort** (no limit or requests mentioned in pod defination)
 * No guarantees
 * First to be evicted under pressure
 
