@@ -28,7 +28,7 @@ Below is a clean, practical POC you can run step-by-step.
 
 ---
 
-# 🎯 Goal of This POC
+### 🎯 Goal of This POC
 
 We will:
 
@@ -40,7 +40,7 @@ We will:
 
 ---
 
-# 🧠 Important Concept Before We Start
+### 🧠 Important Concept Before We Start
 
 HPA works based on:
 
@@ -54,7 +54,7 @@ So:
 
 ---
 
-# 🚀 Step 1 — Deploy a Test Application
+### 🚀 Step 1 — Deploy a Test Application
 
 We’ll use a simple nginx deployment.
 
@@ -101,7 +101,7 @@ kubectl get pods
 
 ---
 
-# 🚀 Step 2 — Expose It
+### 🚀 Step 2 — Expose It
 
 ```bash
 kubectl expose deployment nginx-deployment --type=NodePort --port=80
@@ -109,7 +109,7 @@ kubectl expose deployment nginx-deployment --type=NodePort --port=80
 
 ---
 
-# 🚀 Step 3 — Create HPA
+### 🚀 Step 3 — Create HPA
 
 Create HPA targeting 50% CPU utilization:
 
@@ -135,7 +135,7 @@ nginx-deployment   Deployment/nginx-deployment   0%/50%     1         5         
 
 ---
 
-# 🚀 Step 4 — Generate Load
+### 🚀 Step 4 — Generate Load
 
 Now we need CPU load.
 
@@ -155,7 +155,7 @@ This continuously hits nginx.
 
 ---
 
-# 🚀 Step 5 — Watch Autoscaling
+### 🚀 Step 5 — Watch Autoscaling
 
 In another terminal:
 
@@ -178,7 +178,7 @@ After 30–60 seconds, you should see:
 
 ---
 
-# 🔍 What’s Happening Internally?
+### 🔍 What’s Happening Internally?
 
 1. Metrics Server collects CPU usage
 
@@ -194,7 +194,7 @@ After 30–60 seconds, you should see:
 
 ---
 
-# 🧠 Formula Kubernetes Uses
+### 🧠 Formula Kubernetes Uses
 
 Roughly:
 
@@ -214,7 +214,7 @@ Target = 50%
 
 ---
 
-# 🧪 How to Verify Metrics
+### 🧪 How to Verify Metrics
 
 ```bash
 kubectl top pods
@@ -224,7 +224,7 @@ If CPU shows non-zero values → Metrics Server is working correctly.
 
 ---
 
-# 🛑 Stop Load
+### 🛑 Stop Load
 
 Exit busybox shell:
 
@@ -237,7 +237,7 @@ After a few minutes, pods should scale back down to 1.
 
 ---
 
-# 📦 Optional: Use stress Instead of wget
+### 📦 Optional: Use stress Instead of wget
 
 If you want more aggressive scaling:
 
@@ -248,7 +248,7 @@ kubectl run stress --image=polinux/stress -- \
 
 ---
 
-# 🎓 What You Just Learned
+### 🎓 What You Just Learned
 
 You tested:
 
