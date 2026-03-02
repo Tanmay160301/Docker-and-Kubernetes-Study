@@ -4,7 +4,7 @@
 - [Overview](#Few-pictures)
 - [Requests and Limits](#requests-and-limits)
 - [Metrics Server](#metrics-server)
-- [Autoscaling](#configmaps)
+- [Autoscaling](#autoscaling)
 
 ---
 ## Overview
