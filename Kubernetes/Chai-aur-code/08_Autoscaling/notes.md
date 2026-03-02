@@ -15,7 +15,7 @@
 
 
 ---
-## Metrics Server
+# Metrics Server
 Here are clean, well-structured **Markdown notes** you can directly copy into a `.md` file 👇
 
 ---
@@ -260,7 +260,7 @@ If needed, you can automate this by creating a custom kind cluster configuration
 
 
 ---
-## Autoscaling
+# Autoscaling
 Perfect 😄 now you’re entering the fun part — **autoscaling**.
 
 Since you’ve installed Metrics Server on **kind**, you can now test **Horizontal Pod Autoscaling (HPA)** in **Kubernetes**.
