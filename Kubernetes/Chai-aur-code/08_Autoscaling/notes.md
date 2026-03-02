@@ -11,7 +11,211 @@
 
 
 ---
-## Requests and Limits
+# Requests and Limits
+Here are clean, copy-paste friendly **Markdown notes** on **Requests and Limits in Kubernetes** 👇
+
+
+In **Kubernetes**, resource management is controlled using:
+
+* **Requests**
+* **Limits**
+
+These are defined per container inside a Pod.
+
+---
+
+### 📌 Why Resource Management Is Important
+
+Without resource constraints:
+
+* One container can consume all CPU or memory
+* Other pods may starve
+* Node instability may occur
+* Pods may get evicted
+
+Kubernetes uses requests and limits to ensure fair scheduling and runtime control.
+
+---
+
+### 🧠 Requests vs Limits (Core Concept)
+
+| Field      | Used By                     | Purpose                     |
+| ---------- | --------------------------- | --------------------------- |
+| `requests` | Scheduler                   | Minimum guaranteed resource |
+| `limits`   | Kubelet / Container runtime | Maximum allowed resource    |
+
+---
+
+### 🔹 Resource Requests
+
+### Definition
+
+Requests specify the **minimum amount of resource** a container needs.
+
+Example:
+
+```yaml
+resources:
+  requests:
+    cpu: "100m"
+    memory: "200Mi"
+```
+
+### What Happens?
+
+* Scheduler checks if node has enough free requested capacity
+* Pod is placed only if request can be satisfied
+* This is the **guaranteed minimum**
+
+---
+
+### 🔹 Resource Limits
+
+### Definition
+
+Limits specify the **maximum resource** a container is allowed to use.
+
+Example:
+
+```yaml
+resources:
+  limits:
+    cpu: "500m"
+    memory: "400Mi"
+```
+
+### What Happens?
+
+* CPU: throttled if exceeded
+* Memory: container is OOMKilled if exceeded
+
+---
+
+### 📊 CPU Behavior
+
+* CPU is compressible
+* If container exceeds limit → CPU throttling
+* No crash occurs
+
+Example:
+
+```
+limit: 200m
+usage: 300m
+→ container gets throttled to 200m
+```
+
+---
+
+### 📊 Memory Behavior
+
+* Memory is NOT compressible
+* If usage exceeds limit → container is killed (OOMKilled)
+
+Example:
+
+```
+limit: 200Mi
+usage: 250Mi
+→ container terminated
+```
+
+---
+
+### 🧮 How HPA Uses Requests
+
+Horizontal Pod Autoscaler calculates:
+
+```
+Current CPU Usage / Requested CPU
+```
+
+⚠️ HPA does NOT use limits for scaling decisions.
+
+---
+
+### 🏷 QoS Classes
+
+Kubernetes assigns QoS based on requests and limits:
+
+| QoS Class  | Condition             |
+| ---------- | --------------------- |
+| Guaranteed | requests == limits    |
+| Burstable  | requests < limits     |
+| BestEffort | no requests or limits |
+
+Example:
+
+```yaml
+requests:
+  cpu: 100m
+limits:
+  cpu: 200m
+```
+
+→ QoS = **Burstable**
+
+---
+
+### 📌 Best Practice Pattern
+
+Common configuration:
+
+```yaml
+resources:
+  requests:
+    cpu: "100m"
+    memory: "128Mi"
+  limits:
+    cpu: "300m"
+    memory: "256Mi"
+```
+
+This allows:
+
+* Guaranteed minimum
+* Controlled burst
+* Node protection
+
+
+---
+
+### 🚨 What Happens If You Set Only Limits?
+
+If only limits are set:
+
+* Requests default to limits
+* Scheduler treats them equally
+* May reduce scheduling flexibility
+
+---
+
+### 🚨 What Happens If You Set Nothing?
+
+* Pod becomes **BestEffort**
+* No guarantees
+* First to be evicted under pressure
+
+---
+
+### 🧭 Mental Model
+
+Think of it like:
+
+* **Request = Reserved seat**
+* **Limit = Maximum baggage weight**
+
+---
+
+### 🎯 Summary
+
+* Requests control scheduling
+* Limits control runtime usage
+* CPU is throttled
+* Memory causes OOM kill
+* HPA depends on requests
+* QoS class depends on request-limit relationship
+
 
 
 ---
