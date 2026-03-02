@@ -1,7 +1,7 @@
 # Metrics Server and Autoscaling in Kubernetes
 
 ## Table of Contents
-- [Overview](#Few-pictures)
+- [Overview](#overview)
 - [Requests and Limits](#requests-and-limits)
 - [Metrics Server](#metrics-server)
 - [Autoscaling](#autoscaling)
