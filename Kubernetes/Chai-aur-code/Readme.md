@@ -84,6 +84,7 @@ Creating a deployment.yaml file and deploy the pods
 kubectl run --image=nginx nginx-pod 
 kubectl apply -f deployment.yaml
 kubectl run --image=nginx nginx-pod --dry-run=client -o yaml
+kubectl autoscale deployment deployment-name --min=1 --max=3 --cpu=50% # Autoscale deployment
 ```
 
 Deleting pods/deployments
@@ -94,6 +95,14 @@ kubectl delete -f app.yaml
 kubectl delete pods --all
 ```
 
+Metrics checking: Make sure to have metrics server installed onto the system:
+```
+kubectl top pods -A #for all namespaces
+kubectl top pods -n namespace-name
+kubectl top nodes
+```
+
+
 Commands for Debugging
 ```
 kubectl describe pod my-pod
@@ -102,6 +111,7 @@ kubectl logs my-pod
 kubectl logs my-pod -c my-container #If a pod contains multiple container
 kubectl exec -it my-pod -- /bin/bash # get inside a running pod
 kubectl exec -it my-pod -- sh # for alpine images
+
 ```
 
 ## Theoretical notes  
