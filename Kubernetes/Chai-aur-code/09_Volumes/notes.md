@@ -11,7 +11,7 @@
 - [Static and Dynamic Provisioning](#Static-and-Dynamic-Provisioning)
 - [Reclaim Policies](#Reclaim-Policies)
 - [Storage Classes](#Storage-classes)
-- [Demo](#Demo)
+- [Demo which I had done](#Demo)
 
 Here are clean, well-structured notes you can directly copy into your Markdown file:
 
@@ -31,6 +31,11 @@ Storage in Kubernetes supports:
 ---
 
 ## Types of Volumes
+
+<p align="center">
+  <img src="Images/1.Volumes-in-k8.jpg" width="600"/>
+</p>
+
 
 In Kubernetes, a **Volume** is a directory accessible to containers in a Pod.
 
@@ -88,6 +93,11 @@ Ephemeral volumes are created and deleted along with the Pod.
 
 ## Persistent Volumes
 
+<p align="center">
+  <img src="Images/4.PV-and-PVC.jpg" width="600"/>
+</p>
+
+
 A **PersistentVolume (PV)** is a cluster-wide storage resource.
 
 It is:
@@ -132,6 +142,11 @@ Example flow:
 
 ## Access Policies
 
+<p align="center">
+  <img src="Images/5.Access-modes.jpg" width="600"/>
+</p>
+
+
 Access modes define how a volume can be mounted.
 
 ### 1. ReadWriteOnce (RWO)
@@ -155,6 +170,11 @@ Access modes define how a volume can be mounted.
 ---
 
 ## Static and Dynamic Provisioning
+
+<p align="center">
+  <img src="Images/6.static-and-dynamic-provisioning.jpg" width="600"/>
+</p>
+
 
 ### Static Provisioning
 
@@ -190,7 +210,12 @@ Common in cloud environments.
 
 ---
 
-## Reclaim Policies
+## Reclaim Policies  
+
+<p align="center">
+  <img src="Images/7.Reclaim-policy.jpg" width="600"/>
+</p>
+
 
 Reclaim policy defines what happens to the PV after the PVC is deleted.
 
@@ -211,7 +236,12 @@ Reclaim policy defines what happens to the PV after the PVC is deleted.
 
 ---
 
-## Storage Classes
+## Storage Classes  
+
+<p align="center">
+  <img src="Images/8.Storage-classes.jpg" width="600"/>
+</p>
+
 
 A **StorageClass** defines:
 
@@ -256,9 +286,42 @@ Storage Backend (EBS / NFS / Azure Disk / CSI)
 
 ---
 
-Demo which I did :  
+### Demo:  
+
+**Ephemeral Storage creation:**  
+I have applied pods.yaml file
 
 <p align="center">
   <img src="Images/2.Ephemeral-a.jpg" width="600"/>
 </p>
+
+
+<p align="center">
+  <img src="Images/3.Ephermeral-b.jpg" width="600"/>
+</p>
+
+<p align="center">
+  <img src="Images/3.Ephermeral-c.jpg" width="600"/>
+</p>
+
+** Persistent Volume creation **  
+
+Firstly we will do docker exec into our container and will create a file to be later view from POD when we attach the container volumer to our pod to replicate persistent volume scenario
+
+<p align="center">
+  <img src="Images/9.docker-exec-to-create-file-to-later-used-in-PV.jpg" width="600"/>
+</p>
+
+<p align="center">
+  <img src="Images/10.kubectl-apply-pv-and-pvc.jpg" width="600"/>
+</p>
+
+<p align="center">
+  <img src="Images/10.kubectl-apply-pv-and-pvc.jpg" width="600"/>
+</p>
+
+<p align="center">
+  <img src="Images/12.kubectl-exec-to-check-for-created-file.jpg" width="600"/>
+</p>
+
 
