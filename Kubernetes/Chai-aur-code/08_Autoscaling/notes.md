@@ -28,7 +28,15 @@
   <img src="Images/4.Scaling-types.jpg" width="600"/>
 </p>
 
+Event based auto scaling madhe it’s like we can define custom metrics  
+No of messages in kafka queue   
+No of concurrent message to a database  
 
+A simple Idea of **Metric server**  
+Kubelet collects metrics from pods or nodes and send to metrics server   
+Metrics server exposes these details to API server   
+These metrics are required to do HPA or VPA or kubectl top commands  
+Metric server is not part of Kubernetes Control Plane   
 
 ---
 # Requests and Limits
@@ -44,7 +52,7 @@ These are defined per container inside a Pod.
   <img src="Images/6.requests-and-limits.jpg" width="600"/>
 </p>
 
-
+Workloads should be planned because what might happen is that one pod will start consuming more memory and other pods may not get enough memory as they require   
 ---
 
 ### 📌 Why Resource Management Is Important
@@ -155,7 +163,7 @@ Refer pods.yaml from Requests and limits folder
   <img src="Images/8.OOMKilled-2.jpg" width="600"/>
 </p>
 
-
+When a pod tries to request a resource(cpu, memory) above its requirements, then kubernetes will kill that pod   
 ---
 
 ### 🧮 How HPA Uses Requests
@@ -763,3 +771,4 @@ You tested:
 </p>
 
 
+Images shows Pods being Autoscaled 
