@@ -329,6 +329,8 @@ Firstly we will do docker exec into our container and will create a file to be l
   <img src="Images/10.kubectl-apply-pv-and-pvc.jpg" width="600"/>
 </p>
 
+Here we are viewing the file from our POD volume  
+
 <p align="center">
   <img src="Images/12.kubectl-exec-to-check-for-created-file.jpg" width="600"/>
 </p>
