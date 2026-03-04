@@ -6,6 +6,29 @@
 - [Metrics Server](#metrics-server)
 - [Autoscaling](#autoscaling)
 
+# Something about HPA and VPA
+
+**HPA and VPA**  
+<p align="center">
+  <img src="Images/HPA-VPA-01.jpg" width="600"/>
+</p>
+
+**HPA**   
+<p align="center">
+  <img src="Images/HPA.jpg" width="600"/>
+</p>
+
+**VPA**   
+<p align="center">
+  <img src="Images/VPA.jpg" width="600"/>
+</p>
+
+**Scaling Types** 
+<p align="center">
+  <img src="Images/4.Scaling-types.jpg" width="600"/>
+</p>
+
+
 
 ---
 # Requests and Limits
@@ -15,7 +38,12 @@ In **Kubernetes**, resource management is controlled using:
 * **Requests**
 * **Limits**
 
-These are defined per container inside a Pod.
+These are defined per container inside a Pod.  
+
+<p align="center">
+  <img src="Images/6.requests-and-limits.jpg" width="600"/>
+</p>
+
 
 ---
 
@@ -114,6 +142,19 @@ limit: 200Mi
 usage: 250Mi
 → container terminated
 ```
+
+I did one demo: I used polinux/stress-test image and spin up a pod and purposely exceeded the memory limit leading to the pod getting OOMKilled   
+
+Refer pods.yaml from Requests and limits folder  
+
+<p align="center">
+  <img src="Images/7.OOMKilled.jpg" width="600"/>
+</p>
+
+<p align="center">
+  <img src="Images/8.OOMKilled-2.jpg" width="600"/>
+</p>
+
 
 ---
 
@@ -221,7 +262,13 @@ Here are clean, well-structured **Markdown notes** you can directly copy into a 
 
 ### Enable Metrics Server in kind (Kubernetes in Docker)
 
-### 📌 Overview
+### 📌 Overview  
+
+<p align="center">
+  <img src="Images/5.Metrics-server.jpg" width="600"/>
+</p>
+
+
 
 If you're using **kind** (Kubernetes in Docker), the Metrics Server is **not installed by default**.
 
@@ -354,6 +401,10 @@ kubectl top pods
 ```
 
 If output appears → Metrics Server is working 🎉
+
+<p align="center">
+  <img src="Images/9.Metrics-server.jpg" width="600"/>
+</p>
 
 ---
 
@@ -699,12 +750,16 @@ You tested:
 
 ---
 
-If you'd like next, we can:
+<p align="center">
+  <img src="Images/10.HPA.jpg" width="600"/>
+</p>
 
-* Try memory-based autoscaling
-* Simulate scale down behavior deeply
-* Do autoscaling with custom metrics
-* Understand how HPA differs from VPA
+<p align="center">
+  <img src="Images/11.HPA-2.jpg" width="600"/>
+</p>
 
-Just tell me what direction you want to explore 🚀
+<p align="center">
+  <img src="Images/12.HPA-3.jpg" width="600"/>
+</p>
+
 
