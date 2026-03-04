@@ -304,7 +304,7 @@ I have applied pods.yaml file
   <img src="Images/3.Ephermeral-c.jpg" width="600"/>
 </p>
 
-** Persistent Volume creation **  
+**Persistent Volume creation**  
 
 Firstly we will do docker exec into our container and will create a file to be later view from POD when we attach the container volumer to our pod to replicate persistent volume scenario
 
