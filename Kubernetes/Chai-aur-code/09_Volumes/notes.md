@@ -335,4 +335,6 @@ Here we are viewing the file from our POD volume
   <img src="Images/12.kubectl-exec-to-check-for-created-file.jpg" width="600"/>
 </p>
 
-
+Note:  
+Whenever we write to any path location, will that stores in the pods internal directory path and then it copies that to the persistent volume 
+Mapping between path and locations in the volume   
