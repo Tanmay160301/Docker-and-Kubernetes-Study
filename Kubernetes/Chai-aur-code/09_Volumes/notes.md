@@ -97,6 +97,8 @@ Ephemeral volumes are created and deleted along with the Pod.
   <img src="Images/4.PV-and-PVC.jpg" width="600"/>
 </p>
 
+Storage admin will create a volume of say 80 GB  
+Developer will create a persistent volume claim of say 10GB to consume it  
 
 A **PersistentVolume (PV)** is a cluster-wide storage resource.
 
@@ -131,6 +133,8 @@ The PVC specifies:
 
 If a matching PV exists, Kubernetes binds the PVC to it.
 
+**Rule: PVC and volume storage can only be bound if they have same access policies**  
+
 Example flow:
 
 1. User creates PVC
@@ -146,6 +150,8 @@ Example flow:
   <img src="Images/5.Access-modes.jpg" width="600"/>
 </p>
 
+Read write once - single application can perform read and write operations for that volume created  
+Many - for multiple applications  
 
 Access modes define how a volume can be mounted.
 
@@ -199,6 +205,9 @@ Use case:
 * Kubernetes automatically provisions storage
 * Triggered by PVC
 * Requires a StorageClass
+
+Suppose we have a new pod requiring 70 Gi of RWX access policy storage then 
+System will dynamically create the storage volume of same access policy  
 
 Flow:
 
