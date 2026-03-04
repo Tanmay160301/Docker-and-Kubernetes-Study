@@ -5,6 +5,7 @@
 - [Environment Variables](#environment-variables)
 - [Config Maps](#configmaps)
 - [Secrets](#secrets)
+- [Demo which I had done](#Demo)
 
 ## Environment Variables:
 Syntax:  
@@ -283,3 +284,9 @@ kubectl get secret <name> -o jsonpath='{.data.password}' | base64 --decode
 
 These notes should give you a solid foundation for working with ConfigMaps and Secrets in Kubernetes. For production use, always follow security best practices.
 These notes should give you a solid foundation for working with ConfigMaps and Secrets in Kubernetes. For production use, always follow security best practices.
+
+
+---
+# Demo 
+
+Demo could be found in commands.md file 

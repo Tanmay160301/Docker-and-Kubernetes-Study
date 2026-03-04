@@ -33,3 +33,27 @@ kubectl create secret docker-registry regcred \
   --docker-email=tanmaybhurke01@gmail.com
 
 ```
+
+<p align="center">
+  <img src="../Images/1.deployment.jpg" width="600"/>
+</p>
+
+<p align="center">
+  <img src="../Images/2.svc.jpg" width="600"/>
+</p>
+
+<p align="center">
+  <img src="../Images/3.ep.jpg" width="600"/>
+</p>
+
+<p align="center">
+  <img src="../Images/4.configmap.jpg" width="600"/>
+</p>
+
+<p align="center">
+  <img src="../Images/5.secret.jpg" width="600"/>
+</p>
+
+<p align="center">
+  <img src="../Images/6.Output.jpg" width="600"/>
+</p>
