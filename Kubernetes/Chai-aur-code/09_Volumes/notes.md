@@ -165,7 +165,7 @@ Flow:
 
 1. Admin creates PV
 2. User creates PVC
-3. Kubernetes binds them
+3. Kubernetes binds them like whenever we create kubernetes manifests like pod.yaml or deployment.yaml we provide the persistent volume and persistent volume claim on that
 
 Use case:
 
@@ -256,13 +256,9 @@ Storage Backend (EBS / NFS / Azure Disk / CSI)
 
 ---
 
-If you'd like, I can also create:
+Demo which I did :  
 
-* Interview-focused notes
-* Real YAML examples
-* Comparison tables
-* Diagrams explanation
-* Troubleshooting section
-* Kubernetes Storage interview Q&A
+<p align="center">
+  <img src="Images/2.Ephemeral-a.jpg" width="600"/>
+</p>
 
-Just tell me what you prefer.
