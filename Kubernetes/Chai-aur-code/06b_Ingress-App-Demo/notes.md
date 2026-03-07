@@ -265,3 +265,10 @@ kubectl get endpoints
 5. Update `/etc/hosts`
 6. Test in browser
 
+## Demo which I did
+
+Building a Docker image from 
+
+<p align="center">
+  <img src="./Image-notes/1.docker-image.jpg" width="600"/>
+</p>
