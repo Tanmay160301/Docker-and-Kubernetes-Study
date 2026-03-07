@@ -267,8 +267,51 @@ kubectl get endpoints
 
 ## Demo which I did
 
-Building a Docker image from 
+### Step 1
+Building a Docker image from scratch
 
 <p align="center">
   <img src="./Image-notes/1.docker-image.jpg" width="600"/>
+</p>
+
+### Step 2
+Checking whether the container could be spun properly with the image created
+<p align="center">
+  <img src="./Image-notes/2.checking-image-is-correctly-working.jpg" width="600"/>
+</p>
+
+### Step 3
+Installing Ingress Controller
+<p align="center">
+  <img src="./Image-notes/3.installing-ingress.jpg" width="600"/>
+</p>
+
+<p align="center">
+  <img src="./Image-notes/4.checking-working-of-ingress-pods.jpg" width="600"/>
+</p>
+
+### Step 4
+Applying the Ingress manifest yaml
+
+### Step 5
+Update /etc/hosts file
+
+### Step 6
+Creating a deployment and a service
+
+<p align="center">
+  <img src="./Image-notes/5.doing-a-deployment.jpg" width="600"/>
+</p>
+
+### Step 7
+<p align="center">
+  <img src="./Image-notes/6.deploying-service.jpg" width="600"/>
+</p>
+
+
+### Step 8
+Final Output
+
+<p align="center">
+  <img src="./Image-notes/6.deploying-service.jpg" width="600"/>
 </p>
