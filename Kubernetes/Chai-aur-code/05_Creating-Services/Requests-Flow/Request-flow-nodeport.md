@@ -257,14 +257,12 @@ NodePort
 Mhanun NodePort madhe entry point **NodeIP:NodePort** asta, pan shevati routing ani load balancing **kube-proxy** ch karto. ✅
 
 
-Interview Madhe Safe Answer
+### Jar interviewer vicharla:
 
-Jar interviewer vicharla:
-
-"Does NodePort traffic go through ClusterIP?"
+#### "Does NodePort traffic go through ClusterIP?"
 
 Mi asa answer dein:
 
-"Logically, a NodePort Service includes a ClusterIP Service and uses the same backend endpoints. However, at the packet-routing level kube-proxy may directly translate NodePort traffic to backend Pod IPs without the packet literally traversing the ClusterIP address."
+> "Logically, a NodePort Service includes a ClusterIP Service and uses the same backend endpoints. However, at the packet-routing level kube-proxy may directly translate NodePort traffic to backend Pod IPs without the packet literally traversing the ClusterIP address."
 
 He technically strongest answer ahe.
